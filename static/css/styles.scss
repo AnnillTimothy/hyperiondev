@@ -191,7 +191,24 @@ nav {
     align-items: center;
     height: 92vh;
     padding: 0px 8vh;    
+    position: static;
 
+    .triangle, .circle {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .triangle {
+        top: 15vh;
+        left: 0;
+    }
+
+    .circle {
+        bottom: 0;
+        right: 0;
+        height: 60vh;
+        margin-right: -200px;
+    }
 
     .hero-text {
         max-width: 40vw;
@@ -237,7 +254,8 @@ nav {
     flex-direction: column;
     text-align: center;
     padding: 8vh 0px;
-
+    position: static;
+    
     section {
         margin-top: 8vh;
     }
@@ -307,9 +325,6 @@ nav {
         }
     }
 
-    .polka, .diamond {
-        display: none;
-    }
 
     .wrapper {
         display: flex;
@@ -414,6 +429,7 @@ nav {
     flex-direction: column;
     align-content: center;
     margin: 8vh 8vw;
+    position: static;
 
     .title {
         align-self: center;
@@ -425,7 +441,7 @@ nav {
 
     div {
         margin: 8vh 0px;
-        width: 40%;
+        width: 80%;
         min-width: 350px;
         display: flex;
         flex-direction: column;
@@ -443,10 +459,10 @@ nav {
 
 .statistics {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 8vh 8vw;
-    height: 100vh;
-    
+    position: static;
+
     .stat-text {
         width: 40%;
         display: flex;
@@ -457,11 +473,12 @@ nav {
             flex-direction: column;
 
             li {
-                margin-top: 20px;
+                margin-top: 30px;
 
                 h1 {
                     font-weight: 600;
                     font-size: 27px;
+                    padding-bottom: 10px;
                 }
 
                 h2{
@@ -551,8 +568,7 @@ nav {
 # footer
 --------------------------------------------------------------*/
 footer {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding: 10vh 5vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -628,7 +644,23 @@ footer {
 
     // add !important because you specified min and max in base
     .hero-text {
-        min-width: 80vh !important;
+        min-width: 60vh !important;
+    }
+
+    .couple {
+        display: none;
+    }
+    .chat {
+        display: none;
+    }
+
+    .small-text {
+        width: 60% !important;
+        align-self: center !important;
+    }
+
+    .triangle {
+        margin-left: -30vh;
     }
 
     .nav-links {
@@ -667,6 +699,10 @@ footer {
         h1 {
             width: 80vw;
         }
+    }
+
+    .stat-text {
+        width: 100% !important;
     }
 }
 
