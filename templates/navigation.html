@@ -1,0 +1,41 @@
+<nav>
+    <a href="{{url_for('home')}}"><img class="logo" src="{{ url_for('static', filename = 'images/logo.svg')}}" alt="HyperionDev Logo"></a>
+
+    <!-- Burger menu - remember to turn it into an x when active-->
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+
+    <ul class="nav-links">
+        <li>
+            <div class="hover-nav">
+                <a href="#">Courses</a>
+
+                <!-- Display is set to none, create hover effect with css js to toggle display-->
+                <div class="hover-nav-links" style="display: none;">
+                  <a href="#" >Onsite Bootcamps</a>
+                  {% for item in onsite %}
+                  <a href="#">{{ item.name }}</a>
+                  {% endfor %}
+
+                  <a href="#" >Online Bootcamps</a>
+                  {% for item in items %}
+                  <a href="#">{{ item.name }}</a>
+                  {% endfor %}
+
+                  <a href="#">Stellenbosch University Partnerships</a>
+                  {% for item in uni %}
+                  <a href="#">{{ item.name }}</a>
+                  {% endfor %}
+                </div>
+
+            </div>
+        </li>
+        <li><a href="{{ url_for('additional')}}">Pricing</a></li>
+        <li><a href="{{ url_for('additional')}}">Method</a></li>
+        <li><a href="{{ url_for('additional')}}">Contact</a></li>
+
+    </ul>
+</nav>

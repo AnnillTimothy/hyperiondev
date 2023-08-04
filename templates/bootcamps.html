@@ -1,0 +1,92 @@
+<!-- Sectional element for positioning -->
+<div class="courses-section">
+
+    <!-- Animation Images -->
+    <img class="polka" src="{{ url_for('static', filename = 'images/green_polka.png')}}" alt="polka-dots">
+
+    <img class="diamond" src="{{ url_for('static', filename = 'images/diamond.png')}}" alt="diamond">
+
+    <h1 class="largest-title">Choose <span class="green">your setup</span></h1>
+
+    <!-- Choice Buttons -->
+    <ul class="buttons">
+        <li><h1 class="large-title">Toggle Onsite</h1></li>
+        <li>
+            <label>
+                <input type="checkbox" id="showHideCheckbox" class="checker">
+            </label>
+        </li>
+    </ul>
+  
+    
+    <section class="online-courses" id="content1">
+    
+        <!-- Title -->
+        <h1 class="large-title">Online Coding Bootcamps</h1>
+        <p class="small-text">We partner with leading universities to deliver coding bootcamps. Study online or on campus, around your schedule. Graduate in as little as 3 months.</p>
+    
+        <!-- Online Bootcamps -->
+        <div class="wrapper">
+            {% for item in items %}
+            <div class="bootcamp">
+                <h1>{{ item.name }}</h1>
+                <p>{{ item.description}}</p>
+                <ul>
+                    <li>{{ item.part}} months part-time</li>
+                    <li>{{ item.full}} months full-time</li>
+                </ul>
+                <a href="{{ url_for('additional')}}" class="button">View More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Use ID for checkbox-->
+    <section class="uni-courses" id="content2">
+        <!-- Title -->
+        <h1 class="large-title">University Bootcamps</h1>
+        <p class="small-text">We partner with leading universities to deliver coding bootcamps. Study online or on campus, around your schedule. Graduate in as little as 3 months.</p>
+
+        <!-- University Bootcamps -->
+        <div class="wrapper">
+            {% for item in uni %}
+            <div class="bootcamp">
+                <h1>{{ item.name }}</h1>
+                <p>{{ item.description}}</p>
+                <ul>
+                    <li><i class="fa fa-check"></i>{{ item.part}} months part-time</li>
+                    <li><i class="fa fa-check"></i>{{ item.full}} months full-time</li>
+                </ul>
+                <a href="{{ url_for('additional')}}" class="button">View More</a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+    
+    <section class="onsite-courses" id="content3">
+
+        <!-- Title -->
+        <h1 class="large-title">On-site Coding Courses</h1>
+        <p class="small-text">Become a web or software developer at one of our campuses. Choose between studying part-time or full-time and graduate in as little as 3 months. </p>
+    
+        <!-- On-Site Bootcamps -->
+        <div class="wrapper">
+            {% for item in onsite %}
+            <div class="bootcamp">
+                <h1>{{ item.name }}</h1>
+                <p>{{ item.description}}</p>
+                <ul>
+                    <li>{{ item.part}} months part-time</li>
+                    <li>{{ item.full}} months full-time</li>
+                </ul>
+                <a href="{{ url_for('additional')}}" class="button">View More</a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    
+
+</div>

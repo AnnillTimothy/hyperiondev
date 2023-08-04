@@ -1,0 +1,6 @@
+<!-- Get rid of this page because it's tacky and hideous-->
+<ul class="company-ul">
+    {% for image_filename in image_filenames %}
+        <li><img src="{{ url_for('static', filename = image_filename) }}" alt="{{ image_filename }}"></li>
+    {% endfor %}
+</ul>

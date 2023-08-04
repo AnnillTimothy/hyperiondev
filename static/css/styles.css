@@ -1,0 +1,483 @@
+/*--------------------------------------------------------------
+# Root
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+.yellow {
+  color: #bd932e !important; }
+
+.green {
+  color: #45b8a7; }
+
+.blue {
+  color: #103452; }
+
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif; }
+
+.additional {
+  min-height: 80vh;
+  margin: 8vh; }
+
+/*--------------------------------------------------------------
+# pre-loader
+--------------------------------------------------------------*/
+.intro {
+  background: #103452;
+  color: white;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3; }
+
+.intro-text {
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Montserrat", sans-serif; }
+
+.slider {
+  background: #bd932e;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%); }
+
+.hide {
+  background: #103452;
+  overflow: hidden; }
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block; }
+
+/*--------------------------------------------------------------
+# nav
+--------------------------------------------------------------*/
+.hover-nav-active {
+  display: flex !important;
+  flex-direction: column; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+  min-height: 60px;
+  background-color: #103452;
+  position: sticky;
+  top: 0%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1; }
+  nav .logo {
+    width: 9rem;
+    height: 50px;
+    min-width: 60px; }
+  nav .hover-nav {
+    display: flex;
+    flex-direction: column; }
+    nav .hover-nav a {
+      padding-bottom: 5px;
+      align-self: center; }
+    nav .hover-nav div a {
+      align-self: normal; }
+  nav .nav-links {
+    background-color: #103452;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    right: 0%;
+    top: 8vh;
+    align-items: center;
+    width: 30%;
+    height: 92vh;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in; }
+    nav .nav-links a {
+      color: white;
+      letter-spacing: 3px;
+      font-size: 14px; }
+
+.nav-active {
+  transform: translateX(0%) !important; }
+
+.burger {
+  cursor: pointer; }
+
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 5px; }
+
+/*--------------------------------------------------------------
+# hero
+--------------------------------------------------------------*/
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 92vh;
+  padding: 0px 8vh; }
+  .hero .hero-text {
+    max-width: 40vw;
+    min-width: 35vw; }
+    .hero .hero-text h1 {
+      font-size: 30px;
+      color: #103452; }
+    .hero .hero-text h2 {
+      font-size: 18px;
+      color: #103452; }
+    .hero .hero-text p {
+      color: #103452;
+      font-weight: 100;
+      margin-bottom: 15px; }
+    .hero .hero-text .button {
+      padding: 10px 25px;
+      border: 1px solid #103452;
+      color: #103452; }
+    .hero .hero-text a:hover {
+      color: white;
+      background-color: #bd932e;
+      border: 1px solid #bd932e; }
+
+/*--------------------------------------------------------------
+# bootcamps
+--------------------------------------------------------------*/
+.courses-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 8vh 0px; }
+  .courses-section section {
+    margin-top: 8vh; }
+  .courses-section .small-text {
+    font-weight: 100;
+    color: #103452; }
+  .courses-section .medium-title {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #103452; }
+  .courses-section .large-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 30px;
+    color: #103452; }
+  .courses-section .largest-title {
+    font-weight: 600;
+    font-size: 40px;
+    color: #103452; }
+  .courses-section .buttons {
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0vh; }
+    .courses-section .buttons li {
+      margin-left: 5px; }
+      .courses-section .buttons li h1 {
+        font-weight: 600;
+        font-size: 18px; }
+      .courses-section .buttons li .checker {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border: 1px solid #103452;
+        height: 20px;
+        width: 20px; }
+  .courses-section .online-courses, .courses-section .uni-courses {
+    display: flex;
+    flex-direction: column; }
+  .courses-section .onsite-courses {
+    display: none;
+    flex-direction: column; }
+    .courses-section .onsite-courses .bootcamp h1 {
+      background-color: #bd932e; }
+  .courses-section .polka, .courses-section .diamond {
+    display: none; }
+  .courses-section .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 0px; }
+    .courses-section .wrapper .bootcamp {
+      width: 30%;
+      min-width: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      margin: 20px;
+      padding: 30px;
+      height: 30vh;
+      min-height: 350px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 2s ease-in; }
+      .courses-section .wrapper .bootcamp ul {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        font-weight: 100; }
+        .courses-section .wrapper .bootcamp ul li i {
+          font-weight: 100;
+          color: #bd932e;
+          margin-right: 5px;
+          align-items: center;
+          align-content: center; }
+      .courses-section .wrapper .bootcamp h1 {
+        display: flex;
+        width: 100%;
+        min-height: 8vh;
+        padding: 10px;
+        background-color: #103452;
+        color: white;
+        align-items: center;
+        font-size: 18px;
+        justify-content: center; }
+      .courses-section .wrapper .bootcamp a {
+        border: 2px solid #bd932e;
+        padding: 10px;
+        width: 100%;
+        color: #bd932e; }
+      .courses-section .wrapper .bootcamp a:hover {
+        color: white;
+        background-color: #bd932e;
+        transition: transform 0.5s ease-in; }
+    .courses-section .wrapper .bootcamp:hover {
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+      transition: transform 2s ease-in;
+      transform: scale(1); }
+      .courses-section .wrapper .bootcamp:hover h1 {
+        background-color: #45b8a7; }
+      .courses-section .wrapper .bootcamp:hover a {
+        background-color: #103452;
+        color: white;
+        border: none; }
+      .courses-section .wrapper .bootcamp:hover a:hover {
+        background-color: white;
+        color: #103452;
+        border: 1px solid #103452; }
+
+/*--------------------------------------------------------------
+# about
+--------------------------------------------------------------*/
+.about {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 8vh 8vw; }
+  .about .title {
+    align-self: center;
+    font-size: 30px;
+    width: 40%;
+    margin-bottom: 8vh;
+    text-align: center; }
+  .about div {
+    margin: 8vh 0px;
+    width: 40%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 250px; }
+  .about .right {
+    align-self: right; }
+
+/*--------------------------------------------------------------
+# statistics
+--------------------------------------------------------------*/
+.statistics {
+  display: flex;
+  flex-direction: row;
+  margin: 8vh 8vw;
+  height: 100vh; }
+  .statistics .stat-text {
+    width: 40%;
+    display: flex;
+    flex-direction: column; }
+    .statistics .stat-text ul {
+      display: flex;
+      flex-direction: column; }
+      .statistics .stat-text ul li {
+        margin-top: 20px; }
+        .statistics .stat-text ul li h1 {
+          font-weight: 600;
+          font-size: 27px; }
+        .statistics .stat-text ul li h2 {
+          padding-bottom: 10px;
+          color: #bd932e;
+          font-weight: 600;
+          font-size: 16px; }
+        .statistics .stat-text ul li p {
+          font-weight: 100; }
+
+/*--------------------------------------------------------------
+# companies 
+--------------------------------------------------------------*/
+.company-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 25vh;
+  margin: 30px 0px; }
+  .company-ul li {
+    margin-right: 15px; }
+
+/*--------------------------------------------------------------
+# companies 
+--------------------------------------------------------------*/
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%; }
+  .cta h1 {
+    font-size: 30px;
+    width: 40%;
+    margin-bottom: 8vh;
+    text-align: center; }
+  .cta img {
+    display: none; }
+  .cta ul {
+    display: flex; }
+    .cta ul li a {
+      padding: 10px 25px;
+      border: 1px solid #103452;
+      margin-right: 15px;
+      color: #103452; }
+    .cta ul li .yellow {
+      border: 1px solid #bd932e !important; }
+    .cta ul li .yellow:hover {
+      color: white !important;
+      background-color: #bd932e !important; }
+    .cta ul li a:hover {
+      color: white !important;
+      background-color: #103452;
+      border: none; }
+
+/*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
+footer {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: top;
+  background-color: #103452;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+  footer div {
+    align-items: center;
+    margin: 15px; }
+  footer .social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 6px; }
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    margin: 15px; }
+    footer ul li {
+      padding-top: 7px; }
+  footer a {
+    color: white;
+    font-weight: 100; }
+  footer a:hover {
+    color: #bd932e;
+    font-weight: 400; }
+  footer .icon {
+    width: 15vh;
+    height: 15vh; }
+
+.rights {
+  display: flex;
+  justify-content: center;
+  height: 5vh;
+  color: white;
+  background-color: #103452;
+  font-weight: 100; }
+  .rights a {
+    color: white;
+    padding: 0px 3px;
+    transition: transform 2s ease-in; }
+  .rights a:hover {
+    color: #bd932e;
+    font-weight: 400; }
+
+/*--------------------------------------------------------------
+# responsive
+--------------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .hero-text {
+    min-width: 80vh !important; }
+
+  .nav-links {
+    min-width: 50%;
+    padding-left: 20px; }
+
+  .courses-section {
+    width: 100%; }
+
+  .bootcamp {
+    min-width: 40% !important; }
+
+  .company-ul {
+    display: none; }
+
+  .about {
+    align-items: center; }
+    .about .title {
+      min-width: 80vw; }
+    .about div {
+      min-width: 80vw; }
+      .about div h1 {
+        padding-bottom: 5px; }
+
+  .cta h1 {
+    width: 80vw; } }
+@media screen and (max-width: 768px) {
+  .hero-text {
+    min-width: 100% !important; }
+
+  .bootcamp {
+    min-width: 100% !important; }
+
+  .nav-links {
+    min-width: 100%;
+    padding-left: 10px; }
+
+  footer {
+    flex-wrap: wrap; }
+    footer div, footer ul {
+      min-width: 200px; } }
+
+/*# sourceMappingURL=styles.css.map */

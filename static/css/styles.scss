@@ -1,0 +1,693 @@
+// Search display and add and replace with mixin for flex direction
+
+/*--------------------------------------------------------------
+# Root
+--------------------------------------------------------------*/
+
+// Colors
+$default-color: #103452;
+$primary-color: #103452;
+$secondary-color: #bd932e;
+$third-color: #45b8a7;
+
+// Font Family
+$default-font: 'Montserrat', sans-serif;
+  
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.yellow {
+    color: #bd932e !important;
+}
+
+.green {
+    color: $third-color;
+}
+
+.blue {
+    color: $default-color;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: $default-font;
+}
+
+.additional {
+    min-height: 80vh;
+    margin: 8vh;
+}
+
+/*--------------------------------------------------------------
+# pre-loader
+--------------------------------------------------------------*/
+
+.intro {
+    background: $default-color;
+    color: white;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    z-index: 3;
+}
+
+.intro-text {
+    font-size: 3rem;
+    text-align: center; 
+    font-family: $default-font;
+}
+  
+.slider {
+    background: $secondary-color;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%); 
+}
+  
+.hide {
+    background: $default-color;
+    overflow: hidden; 
+}
+  
+.hide span {
+    transform: translateY(100%);
+    display: inline-block; 
+}
+
+/*--------------------------------------------------------------
+# nav
+--------------------------------------------------------------*/
+.hover-nav-active {
+    display: flex !important;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    min-height: 60px;
+    background-color: $default-color;
+    position: sticky;
+    top: 0%;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    z-index: 1;
+
+    .logo {
+        width: 9rem;
+        height: 50px;
+        min-width: 60px;
+    }
+
+    .hover-nav {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            padding-bottom: 5px;
+            align-self: center;
+        }
+
+        div a {
+
+            align-self:normal;
+        }
+    }
+
+    .nav-links {
+        background-color: #103452;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        right: 0%;
+        top: 8vh;
+        align-items: center;
+        width: 30%;
+        height: 92vh;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+
+
+        a {
+            color: white;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+    }
+
+}
+
+.nav-active {
+    transform: translateX(0%) !important;
+}
+
+.burger {
+    cursor: pointer;
+}
+
+
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 5px;
+}
+
+
+/*--------------------------------------------------------------
+# hero
+--------------------------------------------------------------*/
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 92vh;
+    padding: 0px 8vh;    
+
+
+    .hero-text {
+        max-width: 40vw;
+        min-width: 35vw;
+
+        h1 {
+            font-size: 30px;
+            color: $primary-color;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: $primary-color;
+        }
+
+        p {
+            color: $primary-color;
+            font-weight: 100;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            padding: 10px 25px;
+            border: 1px solid $default-color;
+            color: $default-color;
+        }
+
+        a:hover {
+            color: white;
+            background-color: $secondary-color;
+            border: 1px solid $secondary-color;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# bootcamps
+--------------------------------------------------------------*/
+
+
+.courses-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 8vh 0px;
+
+    section {
+        margin-top: 8vh;
+    }
+
+    .small-text {
+        font-weight: 100;
+        color: $primary-color;
+    }
+    
+    .medium-title {
+        margin-bottom: 10px;
+        font-weight: 400;
+        font-size: 20px;
+        color: $primary-color;
+    }
+    
+    .large-title {
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 30px;
+        color: $primary-color;
+    }
+
+    .largest-title {
+        font-weight: 600;
+        font-size: 40px;
+        color: $primary-color;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        margin: 5vh 0vh;
+
+
+        li {
+            margin-left: 5px;
+
+            h1 {
+                font-weight: 600;
+                font-size: 18px;
+            }
+
+            .checker {
+                box-shadow: 0 2px 5px rgba(0,0,0,.1);
+                border: 1px solid $primary-color;
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+    }
+
+    .online-courses, .uni-courses {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .onsite-courses {
+        display: none;
+        flex-direction: column;
+        
+        .bootcamp {
+            h1 {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
+    .polka, .diamond {
+        display: none;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 20px 0px;
+
+        
+    .bootcamp {
+        width: 30%;
+        min-width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        margin: 20px;
+        padding: 30px;
+        height: 30vh;
+        min-height: 350px;
+        box-shadow: 0 2px 5px rgba(0,0,0,.1);
+        transition: transform 2s ease-in;
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            font-weight: 100;
+            
+            li {
+
+                i {
+                    font-weight: 100;
+                    color: $secondary-color;
+                    margin-right: 5px;
+                    align-items: center;
+                    align-content: center;
+                }
+            }
+
+       }
+
+        h1 {
+            display: flex;
+            width: 100%;
+            min-height: 8vh;
+            padding: 10px;
+            background-color: $default-color;
+            color: white;
+            align-items: center;
+            font-size: 18px;
+            justify-content: center;
+        }
+
+        a {
+            border: 2px solid $secondary-color;
+            padding: 10px;
+            width: 100%;
+            color: $secondary-color;
+        }
+        a:hover {
+            color: white;
+            background-color: $secondary-color;
+            transition: transform 0.5s ease-in;
+        }
+    }
+
+        .bootcamp:hover {
+            box-shadow: 0 3px 7px rgba(0,0,0,.1);
+            transition: transform 2s ease-in;
+            transform: scale(1);
+
+            h1 {
+                background-color: $third-color;
+            }
+
+            a {
+                background-color: $default-color;
+                color: white;
+                border: none;
+            }
+
+            a:hover {
+                background-color: white;
+                color: $default-color;
+                border: 1px solid $default-color;
+            }
+
+        }
+    }
+
+
+}
+
+/*--------------------------------------------------------------
+# about
+--------------------------------------------------------------*/
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 8vh 8vw;
+
+    .title {
+        align-self: center;
+        font-size: 30px;
+        width: 40%;
+        margin-bottom: 8vh;
+        text-align: center;
+    }
+
+    div {
+        margin: 8vh 0px;
+        width: 40%;
+        min-width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 250px;
+    }
+
+    .right {
+        align-self: right;
+    }
+}
+/*--------------------------------------------------------------
+# statistics
+--------------------------------------------------------------*/
+
+.statistics {
+    display: flex;
+    flex-direction: row;
+    margin: 8vh 8vw;
+    height: 100vh;
+    
+    .stat-text {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                margin-top: 20px;
+
+                h1 {
+                    font-weight: 600;
+                    font-size: 27px;
+                }
+
+                h2{
+                    padding-bottom: 10px;
+                    color: $secondary-color;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                p {
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# companies 
+--------------------------------------------------------------*/
+.company-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-height: 25vh;
+    margin: 30px 0px;
+
+    li {
+        margin-right: 15px;
+    }
+}
+
+/*--------------------------------------------------------------
+# companies 
+--------------------------------------------------------------*/
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+
+    h1 {
+        font-size: 30px;
+        width: 40%;
+        margin-bottom: 8vh;
+        text-align: center;
+    }
+
+    img {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            a {
+                padding: 10px 25px;
+                border: 1px solid $default-color;
+                margin-right: 15px;
+                color: $default-color;
+            }
+
+            .yellow {
+                border: 1px solid $secondary-color !important;
+            }
+
+            .yellow:hover {
+                color: white !important;
+                background-color: $secondary-color !important;
+            }
+
+            a:hover {
+                color: white !important;
+                background-color: $default-color;
+                border: none;
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
+footer {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: top;
+    background-color: $default-color;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+
+    div {
+        align-items: center;
+        margin: 15px;
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 6px;
+
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+
+        li {
+            padding-top: 7px;
+        }
+    }
+
+    a {
+        color: white;
+        font-weight: 100;
+    }
+
+    a:hover {
+        color: $secondary-color;
+        font-weight: 400;
+    }
+
+    .icon {
+        width: 15vh;
+        height: 15vh;
+    }
+}
+
+.rights {
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    color: white;
+    background-color: $default-color;
+    font-weight: 100;
+    
+    a {
+        color: white;
+        padding: 0px 3px;
+        transition: transform 2s ease-in;
+    }
+
+    a:hover {
+        color: $secondary-color;
+        font-weight: 400;
+    }
+}
+
+/*--------------------------------------------------------------
+# responsive
+--------------------------------------------------------------*/
+
+@media screen and (max-width:1024px) {
+
+    // add !important because you specified min and max in base
+    .hero-text {
+        min-width: 80vh !important;
+    }
+
+    .nav-links {
+        min-width: 50%;
+        padding-left: 20px;
+    }
+
+    .courses-section {
+        width: 100%;
+    }
+    .bootcamp {
+        min-width: 40% !important;
+    }
+    
+    .company-ul {
+        display: none;
+    }
+
+    .about {
+        align-items: center;
+        .title {
+        min-width: 80vw;
+        }
+
+        div {
+            min-width: 80vw;
+            
+            h1 {
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    .cta {
+
+        h1 {
+            width: 80vw;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .hero-text{
+        min-width: 100% !important;
+    }
+    .bootcamp {
+        min-width: 100% !important;
+    }
+
+    .nav-links {
+        min-width: 100%;
+        padding-left: 10px;
+    }
+    footer {
+        flex-wrap: wrap;
+
+        div, ul {
+            min-width: 200px;
+        }
+
+    }
+}
