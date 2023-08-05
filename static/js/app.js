@@ -1,3 +1,4 @@
+// New GSAP timeline to handle how elements load
 const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
 tl.to(".text", {y:"0%", duration: 1.5, stagger: 0.25 });
@@ -6,9 +7,11 @@ tl.to(".slider", {y: "-100%", duration: 1, delay: 1 }, "-=1.5");
 tl.to(".intro", {y: "-100%", duration: 1}, "-=1");
 tl.fromTo("nav", {opacity: 0}, {duration: 1, opacity: 1}, "-=.5");
 tl.fromTo(".hero", {opacity: 0}, {duration: 1, opacity: 1});
-tl.fromTo(".courses-section", {opacity: 0}, {duration: 1, opacity: 1}), "-=1";
+tl.fromTo(".circle-img", {opacity: 0}, {duration: .5, opacity: 1});
+tl.fromTo("#bg", {opacity: 0}, {duration: 1, opacity: 1}), "-=.5";
+tl.fromTo("footer", {opacity: 0}, {duration: 1, opacity: 1}), "-=1";
 
-// Nav display on click
+// Display NAV on click of burger
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -27,10 +30,10 @@ const navLinks = () => {
     });
 }
 
-// Hero Animations
+// Continuous animations that trigger on load
 const triangle = document.querySelector('.triangle');
         
-        // GSAP continuous animation
+        // GSAP continuous animation function (without using fromto repeat)
         function animateTriangle() {
             gsap.to(triangle, {
                 x: 20, // Target X position (end point)
@@ -54,12 +57,12 @@ const circle = document.querySelector('.circle');
             });
         }
 
-const companyImg = document.querySelector('.company-ul');
+const circleBg = document.querySelector('.circle-img');
         
-        function animateCompany() {
-            gsap.to(companyImg, {
-                x: -300, 
-                duration: 2, 
+        function animateSide() {
+            gsap.to(circleBg, {
+                x: -30, 
+                duration: 3, 
                 repeat: -1, 
                 yoyo: true, 
                 ease: 'power1.inOut', 
@@ -72,7 +75,7 @@ const app = () => {
     navLinks();
     animateTriangle();
     animateCircle();
-    animateCompany();
+    animateSide();
 }
 
 app();
@@ -96,3 +99,51 @@ checkbox.addEventListener('change', function() {
         content3Div.style.display = 'none';
     }
 });
+
+//SCROLLMAGIC
+const laptop = document.querySelector(".laptop-img");
+const bootcamp = document.querySelector(".bootcamp");
+
+const controller = new ScrollMagic.Controller();
+
+// TweenMax.set for instant trigger animations
+let laptopAnim = TweenMax.to(laptop, {opacity: 0, duration: 1});
+
+// This makes the laptop image dissappear when triggered
+let aboutScene = new ScrollMagic.Scene({
+    duration: 3,
+    triggerElement: bootcamp,
+    triggerHook: 0,
+  })
+    .setTween(laptopAnim)
+    .addTo(controller);
+
+const drink = document.querySelector(".drink-img");
+const mentor = document.querySelector(".mentoring-img");
+    
+// GSAP TimelineMax instance to manage multiple animations
+const tlMax = new TimelineMax();
+
+// Animations to add
+tlMax.to(drink, {opacity: 0, duration: .1});
+tlMax.to(mentor, {opacity: 1, duration: .1}), "-=1";
+
+// ScrollMagic scene with the timeline as the tween
+let scene = new ScrollMagic.Scene({
+  duration: 0, // Set duration to 0 for instant trigger
+  triggerElement: bootcamp,
+  triggerHook: 0
+})
+.setTween(tlMax) // Use the timeline as the tween 
+.addTo(controller);
+
+let ctaAnim = TweenMax.to(laptop, {opacity: 1, duration: 3});
+
+// This makes the laptop image reappear when triggered
+let ctaScene = new ScrollMagic.Scene({
+    duration: 3,
+    triggerElement: ".cta",
+    triggerHook: 0,
+  })
+    .setTween(ctaAnim)
+    .addTo(controller);

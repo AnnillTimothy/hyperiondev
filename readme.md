@@ -56,7 +56,7 @@ This redesign of the HyperionDev landing page, predominently using HTML, CSS, GS
 
 Here's why:
 * FLASK to adhere with DRY principals. Everything is written in smaller templates and components to make it easier to maintain and remove as it becomes redundant. 
-* FLASK assists here by allowing the use of SASS and CSS interchangably as needed without needing to interfere with any other stylesheets, templates or components.
+* FLASK assists here by allowing the use of SASS and CSS interchangably as needed without needing to interfere with any other stylesheets, templates or components. 
 * GSAP for quick and easy animations and transitions to make the page more interactive and to simplify front end data rendering.
 * Very simple to add new templates and stylesheet directly to the DOM. 
 * Addional funcionality like filtering can easily be added with Python.
@@ -64,7 +64,11 @@ Here's why:
 
 <br>
 
-I also chose flask to render the new landing page in a really compact and modular way in order to improve maintenance.
+I also chose flask to render the new landing page in a really compact and modular way in order to improve ease of maintenance.
+
+<br>
+
+* PS some of the notes here ended up being from me to myself. If you would like to use this code for whatever reason, please enjoy the notes on alternative ways to do what I did. 
 
 <br>
 
@@ -101,6 +105,8 @@ Make sure the latest version of Python is installed. Check using command
 If you don't have it installed, you can install it here - [pip](https://pip.pypa.io/en/stable/installation/) 
 
 <br>
+
+
 
 ### Prerequisites
 <br>

@@ -146,7 +146,7 @@ nav {
   position: static; }
   .hero .triangle, .hero .circle {
     position: absolute;
-    z-index: -1; }
+    z-index: -2; }
   .hero .triangle {
     top: 15vh;
     left: 0; }
@@ -171,11 +171,12 @@ nav {
     .hero .hero-text .button {
       padding: 10px 25px;
       border: 1px solid #103452;
-      color: #103452; }
+      color: white;
+      background-color: #103452; }
     .hero .hero-text a:hover {
       color: white;
-      background-color: #bd932e;
-      border: 1px solid #bd932e; }
+      background-color: #45b8a7;
+      border: 1px solid #45b8a7; }
 
 /*--------------------------------------------------------------
 # bootcamps
@@ -185,7 +186,8 @@ nav {
   flex-direction: column;
   text-align: center;
   padding: 8vh 0px;
-  position: static; }
+  position: static;
+  background-color: white; }
   .courses-section section {
     margin-top: 8vh; }
   .courses-section .small-text {
@@ -304,12 +306,12 @@ nav {
   .about .title {
     align-self: center;
     font-size: 30px;
-    width: 40%;
+    width: 35%;
     margin-bottom: 8vh;
     text-align: center; }
   .about div {
     margin: 8vh 0px;
-    width: 80%;
+    width: 45%;
     min-width: 350px;
     display: flex;
     flex-direction: column;
@@ -351,7 +353,8 @@ nav {
 # companies 
 --------------------------------------------------------------*/
 .company-ul {
-  display: flex;
+  display: none;
+  background-color: white;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -361,7 +364,7 @@ nav {
     margin-right: 15px; }
 
 /*--------------------------------------------------------------
-# companies 
+# cta 
 --------------------------------------------------------------*/
 .cta {
   display: flex;
@@ -446,6 +449,39 @@ footer {
     font-weight: 400; }
 
 /*--------------------------------------------------------------
+# scroll trigger background animation images
+--------------------------------------------------------------*/
+#bg {
+  z-index: -1;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%; }
+  #bg img {
+    position: absolute; }
+  #bg .laptop-img {
+    left: 8vh;
+    bottom: 0px;
+    width: 40%; }
+  #bg .drink-img {
+    right: 8vh;
+    bottom: 0px;
+    width: 40%; }
+  #bg .mentoring-img {
+    right: 8vh;
+    bottom: 0px;
+    opacity: 0;
+    width: 40%; }
+  #bg .circle-img {
+    left: 8vh;
+    bottom: 10%;
+    width: 40%;
+    z-index: -2;
+    transform: translateX(-100%);
+    opacity: 0; }
+
+/*--------------------------------------------------------------
 # responsive
 --------------------------------------------------------------*/
 @media screen and (max-width: 1024px) {
@@ -491,7 +527,13 @@ footer {
     width: 80vw; }
 
   .stat-text {
-    width: 100% !important; } }
+    width: 100% !important; }
+
+  .drink-img {
+    min-width: 70%; }
+
+  .laptop-img, .mentoring-img {
+    display: none; } }
 @media screen and (max-width: 768px) {
   .hero-text {
     min-width: 100% !important; }
