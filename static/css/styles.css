@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
 # Root
 --------------------------------------------------------------*/
+.courses-section, .about, .statistics, .cta {
+  display: flex;
+  flex-direction: column; }
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -182,8 +186,6 @@ nav {
 # bootcamps
 --------------------------------------------------------------*/
 .courses-section {
-  display: flex;
-  flex-direction: column;
   text-align: center;
   padding: 8vh 0px;
   position: static;
@@ -298,8 +300,6 @@ nav {
 # about
 --------------------------------------------------------------*/
 .about {
-  display: flex;
-  flex-direction: column;
   align-content: center;
   margin: 8vh 8vw;
   position: static; }
@@ -324,8 +324,6 @@ nav {
 # statistics
 --------------------------------------------------------------*/
 .statistics {
-  display: flex;
-  flex-direction: column;
   margin: 8vh 8vw;
   position: static; }
   .statistics .stat-text {
@@ -367,8 +365,6 @@ nav {
 # cta 
 --------------------------------------------------------------*/
 .cta {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 80vh;

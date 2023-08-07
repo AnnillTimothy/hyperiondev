@@ -1,5 +1,3 @@
-// Search display and add and replace with mixin for flex direction
-
 /*--------------------------------------------------------------
 # Root
 --------------------------------------------------------------*/
@@ -12,7 +10,13 @@ $third-color: #45b8a7;
 
 // Font Family
 $default-font: 'Montserrat', sans-serif;
-  
+
+// Extentions
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -251,8 +255,7 @@ nav {
 
 
 .courses-section {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     text-align: center;
     padding: 8vh 0px;
     position: static;
@@ -427,8 +430,7 @@ nav {
 --------------------------------------------------------------*/
 
 .about {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     align-content: center;
     margin: 8vh 8vw;
     position: static;
@@ -460,8 +462,7 @@ nav {
 --------------------------------------------------------------*/
 
 .statistics {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     margin: 8vh 8vw;
     position: static;
 
@@ -521,8 +522,7 @@ nav {
 --------------------------------------------------------------*/
 
 .cta {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     justify-content: center;
     align-items: center;
     height: 80vh;
